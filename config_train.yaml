@@ -1,0 +1,35 @@
+# Training configuration
+
+# Data
+data_dir: './data/point_clouds'
+num_points: 1024
+batch_size: 16
+num_workers: 4
+
+# Model
+num_classes: 40
+model_path: null  # Set to checkpoint path to resume training
+
+# Training
+num_epochs: 100
+learning_rate: 0.001
+optimizer: 'adam'  # adam, adamw, sgd
+weight_decay: 1e-4
+scheduler: 'cosine'  # step, cosine, exponential, linear, plateau
+clip_norm: 1.0
+
+# Augmentation
+augment: true
+rotation: true
+scaling: true
+jitter: true
+dropout: false
+
+# Device
+device: 'cuda'
+multi_gpu: false
+
+# Checkpoints
+checkpoint_dir: './checkpoints'
+log_dir: './logs'
+save_interval: 5
